@@ -13,7 +13,6 @@ int main(){
         vector<int> add(len, (i & 1) ? -1 : i / 2);
         a.insert(a.end(), all(add));
     }
-    
     vector<int> ans;
     int i = 0, j = sz(a) - 1;
     while(i < sz(a)) {
@@ -30,10 +29,10 @@ int main(){
         i++;
         j--;
     } 
-    
     int L = 0; // real length
-    for (int c : a) L += (c != -1);
-
+    for (int c : a) {
+        L += (c != -1);
+    }
     long long res = 0;
     for (int i = 0; i < L; i++) {
         res += 1ll * i * ans[i];

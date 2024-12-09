@@ -21,7 +21,6 @@ void paint(int x1, int y1, int x2, int y2) {
 int main(){
     while(cin >> a[n]) n++;
     m = a[0].size();
-
     map<char, vector<pair<int,int>>> mp;
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < m; j++) {
@@ -29,7 +28,6 @@ int main(){
             mp[a[i][j]].emplace_back(i,j);
         }
     }
-
     for (auto &[c, v] : mp) {
         const int k = v.size();
         sort(v.begin(), v.end());
@@ -41,12 +39,10 @@ int main(){
             }
         }
     }
-
     int cnt = 0;
     for (int i = 0; i < n; i++) {
         cnt += count(a[i].begin(), a[i].end(), '#');
     }
     cout << cnt << '\n';
-
     return 0;
 }
