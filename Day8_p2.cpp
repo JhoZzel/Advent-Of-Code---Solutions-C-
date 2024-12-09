@@ -16,22 +16,15 @@ void paint(int x1, int y1, int x2, int y2) {
         dx /= g;
         dy /= g;
     }
-    int nx,ny;
-    nx = x1;
-    ny = y1;
-    while(true) {
-        a[nx][ny] = '#';
-        nx += dx;
-        ny += dy;
-        if (nx < 0 or ny < 0 or nx >= n or ny >= m) break;
-    }
-    nx = x1;
-    ny = y1;
-    while(true) {
-        a[nx][ny] = '#';
-        nx -= dx;
-        ny -= dy;
-        if (nx < 0 or ny < 0 or nx >= n or ny >= m) break;
+    for (int s : {-1, 1}) {
+        int nx = x1;
+        int ny = y1;
+        while(true) {
+            a[nx][ny] = '#';
+            nx += s * dx;
+            ny += s * dy;
+            if (nx < 0 or ny < 0 or nx >= n or ny >= m) break;
+        }
     }
 } 
 
